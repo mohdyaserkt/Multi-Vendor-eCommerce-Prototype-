@@ -91,7 +91,36 @@ const [testOtp, setTestOtp] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <Card className='absolute right-5 top-[12%]'>
+          <CardHeader>
+            <CardTitle className="text-lg font-semibold">Sample Login Credentials</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm">
+            <div>
+              <p className="font-medium">Admin Account</p>
+              <p>Email: <span className="text-gray-600">admin@yoursite.com</span></p>
+              <p>Password: <span className="text-gray-600">YourSecurePassword123!</span></p>
+              <p>Role: ADMIN</p>
+              <p>Status: Active</p>
+            </div>
+            <div>
+              <p className="font-medium">Seller Account</p>
+              <p>Email: <span className="text-gray-600">testseller@gmail.com</span></p>
+              <p>Password: <span className="text-gray-600">test123</span></p>
+              <p>Role: SELLER</p>
+              <p>Status: Approved (after admin approval)</p>
+            </div>
+            <div>
+              <p className="font-medium">Customer Account</p>
+              <p>Email: <span className="text-gray-600">testcustomer@gmail.com</span></p>
+              <p>Password: <span className="text-gray-600">test123</span></p>
+              <p>Role: CUSTOMER</p>
+              <p>Status: Active</p>
+            </div>
+          </CardContent>
+        </Card>
       <div className="max-w-md w-full space-y-8">
+        
         <Card>
           <CardHeader>
             <CardTitle>
@@ -115,7 +144,7 @@ const [testOtp, setTestOtp] = useState<string | null>(null);
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
-
+             
             {!requires2FA ? (
               <form onSubmit={handleLogin} className="space-y-4">
                 <div className="space-y-2">
