@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -113,6 +113,7 @@ export default function ProductsPage() {
   };
 
   return (
+    <Suspense>
     <div className="flex w-full justify-center">
       <div className="container py-8">
         <div className="flex flex-col md:flex-row gap-6">
@@ -352,6 +353,6 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
-    </div>
+    </div></Suspense>
   );
 }
