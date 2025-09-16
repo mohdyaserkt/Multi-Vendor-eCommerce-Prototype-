@@ -2,6 +2,10 @@
 
 A complete multi-vendor eCommerce solution built with modern technologies including Next.js, NestJS, PostgreSQL, and Prisma ORM.
 
+## 🎥 Demo Video
+[![Watch the video](assets/tst.png)](https://drive.google.com/file/d/1UyssLyHIeOd81Y_3lML6L1It6YduCx1Y/view?usp=sharing)
+
+
 ## 🏗️ Project Structure
 
 ```
