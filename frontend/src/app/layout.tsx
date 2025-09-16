@@ -9,10 +9,7 @@ import { CartProvider } from "@/components/cart/cart-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "MultiVendor Store",
-  description: "Multi-vendor e-commerce platform",
-};
+
 
 export default function RootLayout({
   children,
