@@ -35,7 +35,7 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { addToCart } = useCart();
-  
+
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<{id: string, name: string}[]>([]);
   const [loading, setLoading] = useState(true);
@@ -45,6 +45,7 @@ export default function ProductsPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 10000]);
+
 
   useEffect(() => {
     fetchProducts();
