@@ -98,9 +98,14 @@ const [testOtp, setTestOtp] = useState<string | null>(null);
               {requires2FA ? 'Two-Factor Authentication' : 'Sign in to your account'}
             </CardTitle>
             <CardDescription>
-              {requires2FA 
-                ? `Enter the verification code sent to your device is :${testOtp}` 
-                : 'Enter your credentials to access your account'}
+              {requires2FA ? (
+    <>
+      Enter the verification code sent to your device is : 
+      <span style={{ color: 'black', fontWeight: 'bold' }}>{testOtp}</span>
+    </>
+  ) : (
+    'Enter your credentials to access your account'
+  )}
             </CardDescription>
           </CardHeader>
           
