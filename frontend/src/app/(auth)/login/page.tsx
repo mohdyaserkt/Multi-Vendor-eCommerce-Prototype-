@@ -177,7 +177,7 @@ const [testOtp, setTestOtp] = useState<string | null>(null);
           
           <CardFooter className="flex flex-col space-y-2">
             <div className="text-sm text-center">
-              <span>Don't have an account? </span>
+              <span>Don&apos;t have an account? </span>
               <a href="/register" className="text-primary hover:underline">
                 Sign up
               </a>
@@ -185,7 +185,7 @@ const [testOtp, setTestOtp] = useState<string | null>(null);
             
             {requires2FA && (
               <div className="text-sm text-center text-muted-foreground">
-                Didn't receive a code? Check your email or contact support.
+                Didn&apos;t receive a code? Check your email or contact support.
               </div>
             )}
           </CardFooter>
