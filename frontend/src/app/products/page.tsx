@@ -1,7 +1,6 @@
 'use client';
-export const dynamic = 'force-dynamic'; // <-- ADD THIS LINE
-export const ssr = false; 
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -31,8 +30,15 @@ import {
 import api from '@/lib/api';
 import { Product } from '@/lib/types';
 import { useCart } from '@/components/cart/cart-context';
-
 export default function ProductsPage() {
+return(
+  <Suspense>
+    <SubProductsPage/>
+  </Suspense>
+)
+}
+
+  function SubProductsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { addToCart } = useCart();
