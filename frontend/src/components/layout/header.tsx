@@ -41,7 +41,7 @@ export function Header() {
   useEffect(() => {
     setUser(getCurrentUser());
     setauthenticated(isAuthenticated())
-  }, []);
+  }, [pathname]);
   const { cartItems } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

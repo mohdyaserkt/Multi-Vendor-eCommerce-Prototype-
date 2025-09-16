@@ -1,4 +1,5 @@
 'use client';
+
 import api from './api';
 
 export interface User {
@@ -16,7 +17,7 @@ export interface LoginResponse {
     user?: User;
     authChallengeId?: string;
     requires2FA?: boolean;
-    testOtp?:string;
+    testOtp?: string;
   };
   message?: string;
 }
@@ -82,25 +83,31 @@ export async function register(data: RegisterData): Promise<RegisterResponse> {
 
 // Logout function
 export function logout(): void {
-  localStorage.removeItem('token');
-  localStorage.removeItem('user');
-  window.location.href = '/login';
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.href = '/login';
+  }
 }
 
 // Get current user
 export function getCurrentUser(): User | null {
+  if (typeof window === 'undefined') return null;
   const userStr = localStorage.getItem('user');
   return userStr ? JSON.parse(userStr) : null;
 }
 
 // Set auth token
 export function setAuthToken(token: string, user: User): void {
-  localStorage.setItem('token', token);
-  localStorage.setItem('user', JSON.stringify(user));
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(user));
+  }
 }
 
 // Check if user is authenticated
 export function isAuthenticated(): boolean {
+  if (typeof window === 'undefined') return false;
   return !!localStorage.getItem('token');
 }
 
